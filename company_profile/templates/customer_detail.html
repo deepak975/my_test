@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'homepage.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+{% block script %}
+<body>
+<p>{{ data.FirstName }}</p>
+<p>{{ data.LastName }}</p>
+<p>{{ data.Email }}</p>
+<p>{{ data.AccountNumber }}</p>
+<p>{{ data.Location }}</p>
+</body>
+{% endblock %}
+</html>

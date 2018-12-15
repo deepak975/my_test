@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}"/>
+
+</head>
+<body>
+<div class="login-page">
+    <div class="form">
+        <form class="login-form" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="username" required/>
+            <input type="password" name="password" placeholder="password" required/>
+            <button>login</button>
+            {% if messages %}
+
+                {% for message in messages %}
+                    <div class="alert alert-warning alert-dismissible {{ message.tags }}">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>{{ message }}</strong>
+                    </div>
+                {% endfor %}
+
+
+            {% endif %}
+
+        </form>
+    </div>
+</div>
+</body>
